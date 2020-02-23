@@ -3,13 +3,16 @@
 import random as rd
 
 
+def inputAndPrint(msg):
+    print(msg)
+    return int(input())
+
+
 if __name__ == "__main__":
 
-    print("Saisir le min :")
-    rangeMin = int(input())
+    rangeMin = inputAndPrint('Entrez le minimum :')
 
-    print("Saisir le max :")
-    rangeMax = int(input())
+    rangeMax = inputAndPrint('Entrez le maximum :')
 
     print("règles du jeu : trouver le nombre entre " + str(rangeMin) + " et " + str(rangeMax))
 
@@ -17,11 +20,10 @@ if __name__ == "__main__":
     typedNumber = rd.randint(rangeMin, rangeMax)
 
     while typedNumber != chosenNumber:
-        print("Tapez :")
-        typedNumber = int(input())
+        typedNumber = inputAndPrint('Entrez un entier non nul :')
         if typedNumber > chosenNumber:
             print("c'est moins")
         elif typedNumber < chosenNumber:
             print("c'est plus")
-        else :
+        else:
             print("c'est gagné")
